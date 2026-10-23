@@ -1,110 +1,320 @@
-<!DOCTYPE html><html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AFRODIETY - Premium Massage Services in Nairobi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#21112e">
+  <meta name="description" content="AFRODIETY — professional massage and wellness services in Nairobi. Explore treatments, prices and booking options.">
+  <title>AFRODIETY | Massage & Wellness Nairobi</title>
   <style>
+    :root {
+      --purple: #21112e;
+      --purple-light: #352044;
+      --teal: #35d0c3;
+      --silver: #e4e5ec;
+      --muted: #bdb8c7;
+      --panel: #30243b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #2e003e;
-      color: #e5e5e5;
+      background: var(--purple);
+      color: var(--silver);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
     }
-    header, footer {
-      background-color: #006d6f;
-      padding: 20px;
+
+    a { color: var(--teal); }
+
+    header {
+      padding: 22px 18px;
       text-align: center;
+      border-bottom: 1px solid #584564;
+      background: #190e22;
     }
-    header h1 {
-      color: #e5e5e5;
+
+    .brand {
       margin: 0;
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      letter-spacing: 5px;
+      color: var(--silver);
     }
+
+    .tagline {
+      color: var(--teal);
+      letter-spacing: 2px;
+      font-size: .8rem;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 18px;
+    }
+
     nav a {
-      color: #e5e5e5;
-      margin: 0 15px;
       text-decoration: none;
+      color: var(--silver);
+      font-size: .95rem;
     }
+
+    nav a:hover { color: var(--teal); }
+
+    .hero {
+      text-align: center;
+      padding: 75px 20px 65px;
+      background: linear-gradient(145deg, #352044, #21112e 65%, #123d40);
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 6vw, 3.3rem);
+      line-height: 1.2;
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    .hero p {
+      max-width: 610px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--teal);
+      color: #102626;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 5px;
+    }
+
+    .button.secondary {
+      color: var(--silver);
+      background: transparent;
+      border: 1px solid var(--teal);
+    }
+
     section {
-      padding: 30px;
-      max-width: 900px;
+      padding: 48px 20px;
+      max-width: 1050px;
       margin: auto;
     }
-    .pricing-table {
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 5px;
+      font-size: 1.9rem;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
     }
-    .pricing-card {
-      background-color: #5a5a5a;
-      padding: 20px;
-      border-radius: 10px;
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #554362;
+      border-radius: 13px;
+      padding: 23px;
     }
-    .pricing-card h3 {
-      margin-top: 0;
-      color: #d0d0d0;
+
+    .card h3 { color: var(--teal); margin-top: 0; }
+
+    .price {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: var(--silver);
     }
+
+    .note { color: var(--muted); font-size: .92rem; }
+
+    .payment {
+      background: #172e30;
+      border: 1px solid var(--teal);
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .payment h3 { color: var(--teal); }
+
+    .payment-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
     .contact {
-      background-color: #1b1b1b;
-      padding: 20px;
-      border-radius: 10px;
+      background: var(--purple-light);
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
     }
-    footer p {
-      margin: 5px;
-      color: #ccc;
+
+    footer {
+      padding: 25px 18px;
+      text-align: center;
+      background: #190e22;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 480px) {
+      nav { gap: 13px; }
+      section { padding: 36px 16px; }
+      .hero { padding: 55px 18px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>AFRODIETY</h1>
-    <nav>
+    <h1 class="brand">AFRODIETY</h1>
+    <div class="tagline">Relax • Restore • Rebalance</div>
+    <nav aria-label="Main navigation">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
+      <a href="#payment">M-Pesa</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>  <section id="services">
-    <h2>Our Massage Services</h2>
-    <p>Experience the highest level of private relaxation, tailored to soothe your body and soul. Our practitioners are trained in sensual, holistic bodywork designed to awaken your senses and restore your energy.</p>
-    <ul>
-      <li>Back Massage - Relieve tension in the shoulders and spine</li>
-      <li>Full Body Massage - Indulge in complete physical restoration</li>
-      <li>Deep Tissue Massage - Ideal for muscle recovery and stress relief</li>
-      <li>Energy Flow Ritual - A deeply connected, sensual experience</li>
-    </ul>
-  </section>  <section id="pricing">
-    <h2>Massage Pricing</h2>
-    <div class="pricing-table">
-      <div class="pricing-card">
-        <h3>Back Massage</h3>
-        <p>30 mins - Ksh 2,500</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Your moment of calm in Nairobi</h2>
+      <p>
+        Make time for yourself with professional massage and
+        wellness treatments in a calm, welcoming environment.
+        Book your appointment and choose a session that suits you.
+      </p>
+      <a class="button"
+         href="https://wa.me/254790045151?text=Hello%20AFRODIETY%2C%20I%20would%20like%20to%20enquire%20about%20a%20massage%20appointment."
+         target="_blank" rel="noopener">
+        Book on WhatsApp
+      </a>
+      <a class="button secondary" href="#pricing">View Prices</a>
+    </section>
+
+    <section id="services">
+      <div class="section-heading">
+        <h2>Our Services</h2>
+        <p>Choose a treatment for relaxation and muscle comfort.</p>
       </div>
-      <div class="pricing-card">
-        <h3>Full Body Massage</h3>
-        <p>60 mins - Ksh 5,000</p>
-        <p>90 mins - Ksh 7,000</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Back Massage</h3>
+          <p>A focused session for the back and shoulder area.</p>
+        </article>
+        <article class="card">
+          <h3>Full Body Massage</h3>
+          <p>A relaxing, full-body wellness session tailored to your comfort.</p>
+        </article>
+        <article class="card">
+          <h3>Deep Tissue Massage</h3>
+          <p>Focused pressure for areas of muscle tension, adjusted to your comfort.</p>
+        </article>
+        <article class="card">
+          <h3>Energy Flow Ritual</h3>
+          <p>A calming wellness session designed around relaxation and rest.</p>
+        </article>
       </div>
-      <div class="pricing-card">
-        <h3>Deep Tissue Massage</h3>
-        <p>60 mins - Ksh 6,000</p>
-        <p>90 mins - Ksh 8,500</p>
+    </section>
+
+    <section id="pricing">
+      <div class="section-heading">
+        <h2>Our Pricing</h2>
+        <p>Prices in Kenyan shillings (KES).</p>
       </div>
-      <div class="pricing-card">
-        <h3>Energy Flow Ritual</h3>
-        <p>75 mins - Ksh 10,000</p>
-        <p>Discreet, private and deeply relaxing.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Back Massage</h3>
+          <p class="price">30 minutes — KSh 2,500</p>
+        </article>
+        <article class="card">
+          <h3>Full Body Massage</h3>
+          <p class="price">60 minutes — KSh 5,000</p>
+          <p class="price">90 minutes — KSh 7,000</p>
+        </article>
+        <article class="card">
+          <h3>Deep Tissue</h3>
+          <p class="price">60 minutes — KSh 6,000</p>
+          <p class="price">90 minutes — KSh 8,500</p>
+        </article>
+        <article class="card">
+          <h3>Energy Flow Ritual</h3>
+          <p class="price">75 minutes — KSh 10,000</p>
+        </article>
       </div>
-    </div>
-  </section>  <section id="contact">
-    <h2>Book Your Escape</h2>
-    <div class="contact">
-      <p><strong>Location:</strong> Nairobi City</p>
-      <p><strong>Phone:</strong> <a href="tel:+254790045151" style="color: #66f3f3;">0790045151</a></p>
-      <p><strong>Email:</strong> <a href="mailto:acaxiamurunga@gmail.com" style="color: #66f3f3;">acaxiamurunga@gmail.com</a></p>
-      <p>By appointment only. Discretion guaranteed.</p>
-    </div>
-  </section>  <footer>
-    <p>&copy; 2025 AFRODIETY - All rights reserved.</p>
-    <p>Crafted with care and class.</p>
+    </section>
+
+    <section id="payment">
+      <div class="section-heading">
+        <h2>M-Pesa Payment</h2>
+        <p>Arrange your appointment before making a payment.</p>
+      </div>
+      <div class="payment">
+        <h3>Pay using M-Pesa Send Money</h3>
+        <p>Recipient phone number:</p>
+        <p class="payment-number">0790 045 151</p>
+        <ol>
+          <li>Contact AFRODIETY to enquire about availability and confirm your booking.</li>
+          <li>Confirm the recipient name and payment amount before sending money.</li>
+          <li>Use M-Pesa Send Money only after confirming the details.</li>
+          <li>Keep your transaction message for your records.</li>
+        </ol>
+        <p class="note">
+          Important: Never share your M-Pesa PIN or one-time verification
+          codes. If the recipient name or details do not match what you
+          were given, stop and verify before paying.
+        </p>
+        <a class="button"
+           href="https://wa.me/254790045151?text=Hello%20AFRODIETY%2C%20please%20confirm%20the%20booking%20and%20M-Pesa%20payment%20details.">
+          Confirm Payment Details
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-heading">
+        <h2>Get in Touch</h2>
+        <p>Contact us to ask questions or enquire about appointments.</p>
+      </div>
+      <div class="contact">
+        <p><strong>Location:</strong> Nairobi, Kenya</p>
+        <p><strong>Phone:</strong>
+          <a href="tel:+254790045151">0790045151</a>
+        </p>
+        <p><strong>Email:</strong>
+          <a href="mailto:acaxiamurunga@gmail.com">acaxiamurunga@gmail.com</a>
+        </p>
+        <a class="button"
+           href="https://wa.me/254790045151?text=Hello%20AFRODIETY">
+          Message Us on WhatsApp
+        </a>
+        <p class="note">Appointments by prior arrangement.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AFRODIETY. All rights reserved.</p>
+    <p>Relaxation and wellness in Nairobi.</p>
   </footer>
 </body>
 </html>
+
